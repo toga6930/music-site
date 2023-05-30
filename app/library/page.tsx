@@ -1,9 +1,25 @@
+"use client";
+import React, { useState } from "react";
+import Navbar from '../components/Navbar';
+import Player from '../components/Player';
+import Likes from "../components/Likes";
+import { PlayList } from "../types/types";
+
 const Library = () => {
+    const [play, setPlay] = useState<PlayList[]>([]);
+    const [search, setSearch] = useState("");
+
+    const songSearch = (search: string) => {
+        setSearch(search);
+    };
+    const songPlay = (song: PlayList) => {
+        setPlay([song]);
+    };
     return (
         <>
-            <div className="flex w-full justify-start h-40 border-t border-gray-200 z-20 bg-pink-100">
-                <p>wow</p>
-            </div>
+            <Navbar songSearch={songSearch}/>    
+            <Likes />
+            <Player play={play} />  
         </>
     );
   };

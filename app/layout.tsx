@@ -1,6 +1,5 @@
-import './globals.css'
-import Navbar from './components/Navbar'
-import Player from './components/Player'
+
+import './globals.css';
 
 export default function RootLayout({
   children,
@@ -10,9 +9,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Navbar/>
+        
         {children}
-        <Player/>
+        
       </body>
     </html>
   )

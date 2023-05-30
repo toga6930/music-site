@@ -13,3 +13,26 @@ button {
     border-radius: 10%;
     padding: 1rem;
 }
+::-webkit-slider-thumb {
+    appearance: none;
+    height: 1.2rem;
+    width: 1.2rem;
+    background-color: rgb(199, 149, 158);
+    border-radius: 50%;
+    border: 2px solid gray;
+    cursor: pointer;
+    position: relative;
+    z-index: 3;
+    box-sizing: border-box;
+}
+
+:active::-webkit-slider-thumb {
+    transform: scale(1.1);
+}
+.musicb {
+    margin-right: 1rem; 
+    color: rgb(88, 85, 85);
+}
+.musicb:hover{
+    transform: scale(1.1);
+}
