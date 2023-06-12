@@ -1,9 +1,9 @@
 "use client";
 import React, { useState } from "react";
-import Home from "./components/Home";
 import Navbar from './components/Navbar';
 import Player from './components/Player';
 import { PlayList } from "./types/types";
+import Home from "./components/Home";
 
 
 export default function App(): JSX.Element {
@@ -19,7 +19,7 @@ export default function App(): JSX.Element {
 
   return (
     <>
-      <Navbar songSearch={songSearch}/>    
+      <Navbar songSearch={songSearch}/> 
       <Home songPlay={songPlay} search={search} />
       <Player play={play} />
     </>

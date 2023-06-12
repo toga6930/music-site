@@ -36,10 +36,9 @@ const Home = ({ songPlay, search }:{ songPlay: (song: PlayList) => void; search:
         }, [search, process.env.NEXT_PUBLIC_RAPIDAPI_KEY]);
 
     return (
-        <div className="flex justify-center w-full m-auto">
-            <ul>
-            {apiSongs?.length > 1 ? apiSongs.map((data: any) => (              
-                <li key={data.id}>
+        <>
+            <div className="flex justify-center w-full h-full flex-wrap pt-16 pb-20 dark:bg-slate-800">            
+            {apiSongs?.length > 1 ? apiSongs.map((data: any) => (                            
                     <Musics
                         id={data.id}
                         title={data.title}
@@ -49,10 +48,9 @@ const Home = ({ songPlay, search }:{ songPlay: (song: PlayList) => void; search:
                         img_medium={data.album.cover_medium}
                         songPlay={songPlay}
                     />
-              </li>
             )) : null}
-            </ul>
-        </div>
+            </div>
+        </>
     )
 }
 export default Home;

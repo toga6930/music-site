@@ -1,34 +1,31 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# LDB-Music
 
-## Getting Started
+## Table of Content
 
-First, run the development server:
+- [Description](#description)
+- [Technology Used](#technology)
+- [Authors Info](#authors-Info)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+## Description
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Hello, Lil Hoon Here, I wanna make music site so I tried it as I can. 
+I use Deezer Api, from RapidApi. This project made by Next JS 13, Tailwind Css. 
+Also I use react-modern-audio-player. You can search using search bar just typing artist song, album etc. 
+And When You click heart Icon, song goes to library page and You can check what you liked.
+Sadly It's free api, So you can only listen 30 seconds preview.
+If you liked it, check my github and youtube!
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Technology
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- Tailwind CSS 
+- NEXTJS 13
+- Deezer Api from Rapid Api 
 
-## Learn More
+## Links
 
-To learn more about Next.js, take a look at the following resources:
+- Live Site URL: [LDB-Music](https://woozer.vercel.app/)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Authors Info
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
