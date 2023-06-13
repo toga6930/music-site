@@ -9,6 +9,7 @@ import Musics from "./Musics";
 const Home = ({ songPlay, search }:{ songPlay: (song: PlayList) => void; search: string }) => {
     const [apiSongs, setApiSongs] = useState<DeezerResp[]>([]);
     const [error, setError] = useState<any>({});
+    const apiKey = process.env.NEXT_PUBLIC_RAPIDAPI_KEY;
 
     useEffect(() => {
         let param = {q: "Kanye West"};
@@ -20,7 +21,7 @@ const Home = ({ songPlay, search }:{ songPlay: (song: PlayList) => void; search:
             url: "https://deezerdevs-deezer.p.rapidapi.com/search",
             params: param,
             headers: {
-                "X-RapidAPI-Key": process.env.NEXT_PUBLIC_RAPIDAPI_KEY,
+                "X-RapidAPI-Key": `${apiKey}`,
                 "X-RapidAPI-Host": "deezerdevs-deezer.p.rapidapi.com",
             },
         };
@@ -33,13 +34,14 @@ const Home = ({ songPlay, search }:{ songPlay: (song: PlayList) => void; search:
                 setError(error);
                 console.error(error);
             });
-        }, [search, process.env.NEXT_PUBLIC_RAPIDAPI_KEY]);
+        }, [search, apiKey]);
 
     return (
         <>
             <div className="flex justify-center w-full h-full flex-wrap pt-16 pb-20 dark:bg-slate-800">            
             {apiSongs?.length > 1 ? apiSongs.map((data: any) => (                            
                     <Musics
+                        key={data.id}
                         id={data.id}
                         title={data.title}
                         artist={data.artist.name}

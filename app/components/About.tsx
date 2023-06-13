@@ -18,7 +18,7 @@ const About = ({onClose}: {onClose: () => void}) => {
                             I use Deezer Api, from RapidApi. This project made by Next JS 13, Tailwind Css. 
                             Also I use react-modern-audio-player. You can search using search bar just typing artist, song, album etc. 
                             And When You click heart Icon, song goes to library page and You can check what you liked.
-                            Sadly It's free api, So you can only listen 30 seconds preview.
+                            Sadly It&apos;s free api, So you can only listen 30 seconds preview.
                             If you liked it, check my github and youtube!
                         </p>
                     </div>
