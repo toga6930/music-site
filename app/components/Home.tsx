@@ -41,7 +41,7 @@ const Home = ({ songPlay, search }:{ songPlay: (song: PlayList) => void; search:
             <div className="flex justify-center w-full h-full flex-wrap pt-16 pb-20 dark:bg-slate-800">            
             {apiSongs?.length > 1 ? apiSongs.map((data: any) => (                            
                     <Musics
-                        
+                        key={data.id}
                         id={data.id}
                         title={data.title}
                         artist={data.artist.name}
