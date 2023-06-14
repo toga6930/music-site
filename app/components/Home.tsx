@@ -25,7 +25,7 @@ const Home = ({ songPlay, search }:{ songPlay: (song: PlayList) => void; search:
                 url: "https://deezerdevs-deezer.p.rapidapi.com/search",
                 params: param,
                 headers: {
-                    "X-RapidAPI-Key": process.env.NEXT_PUBLIC_RAPIDAPI_KEY,
+                    "X-RapidAPI-Key": `${apiKey}`,
                     "X-RapidAPI-Host": "deezerdevs-deezer.p.rapidapi.com",
                 },
             };
