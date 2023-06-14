@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { PlayList, SongInt } from "../types/types";
 import {AiFillHeart, AiOutlineHeart } from "react-icons/ai"
+import Image from "next/image";
 
 const Musics = ({ id, title, artist, preview, img_medium, songPlay }: SongInt) => {
     const [isFav, setIsFav] = useState(false);
@@ -31,7 +32,7 @@ const Musics = ({ id, title, artist, preview, img_medium, songPlay }: SongInt) =
 
     return (
       <div className='flex p-4 mx-2 mt-4 cursor-pointer border-4 flex-col w-60 h-68 rounded-lg border-pink-200 hover:bg-pink-200 shadow-xl dark:hover:bg-slate-900' onClick={handleClick}>
-        <img className=" w-full p-4"  src={img_medium} alt='cover' />
+        <Image className=" w-full p-4" width={300} height={300} src={img_medium} alt='cover' />
         <p className='flex self-center text-xl dark:text-pink-100'>
           {title}
         </p>

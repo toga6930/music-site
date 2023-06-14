@@ -11,7 +11,7 @@ const Navbar = ({songSearch}: { songSearch: (search: string) => void }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [isOpen, setIsOpen] = useState(false);
   const [isDark, setIsDark] = useState(
-    localStorage.getItem("theme") == "dark" ? true : false
+    typeof localStorage !== "undefined" && localStorage.getItem("theme") === "dark"
   );
   useEffect(() => {
     localStorage.getItem("theme") == "dark"
