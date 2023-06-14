@@ -16,24 +16,26 @@ const Home = ({ songPlay, search }:{ songPlay: (song: PlayList) => void; search:
         if (search.length > 1) {
             param = { q: search };
         }
-        const options = {
-            method: "GET",
-            url: "https://deezerdevs-deezer.p.rapidapi.com/search",
-            params: param,
-            headers: {
-                "X-RapidAPI-Key": process.env.NEXT_PUBLIC_RAPIDAPI_KEY,
-                "X-RapidAPI-Host": "deezerdevs-deezer.p.rapidapi.com",
-            },
-        };
-        axios
-            .request(options)
-            .then(function (response) {
-                setApiSongs(response.data.data);
-            })
-            .catch(function (error) {
-                setError(error);
-                console.error(error);
-            });
+        if (typeof window !== "undefined") {
+            const options = {
+                method: "GET",
+                url: "https://deezerdevs-deezer.p.rapidapi.com/search",
+                params: param,
+                headers: {
+                    "X-RapidAPI-Key": process.env.NEXT_PUBLIC_RAPIDAPI_KEY,
+                    "X-RapidAPI-Host": "deezerdevs-deezer.p.rapidapi.com",
+                },
+            };
+            axios
+                .request(options)
+                .then(function (response) {
+                    setApiSongs(response.data.data);
+                })
+                .catch(function (error) {
+                    setError(error);
+                    console.error(error);
+                });
+        }
         }, [search, apiKey]);
 
     return (
