@@ -6,16 +6,20 @@ import Image from "next/image";
 const Likes = () => {
     const [liked, setLiked] = useState<SongInt[]>([]);
     useEffect(() => {
-        const storedLikedSongs = localStorage.getItem("likedSongs");
-        if (storedLikedSongs) {
-          const parsedLikedSongs: SongInt[] = JSON.parse(storedLikedSongs);
-          setLiked(parsedLikedSongs);
+        if (typeof localStorage !== "undefined") {
+            const storedLikedSongs = localStorage.getItem("likedSongs");
+            if (storedLikedSongs) {
+              const parsedLikedSongs: SongInt[] = JSON.parse(storedLikedSongs);
+              setLiked(parsedLikedSongs);
+            }
         }
       }, []);
     const handleDelete = (songId: number) => {
         const updatedLikedSongs = liked.filter((song) => song.id !== songId);
         setLiked(updatedLikedSongs);
-        localStorage.setItem("likedSongs", JSON.stringify(updatedLikedSongs));
+        if (typeof localStorage !== "undefined") {
+            localStorage.setItem("likedSongs", JSON.stringify(updatedLikedSongs));
+        }
     };
     return (
         <>
