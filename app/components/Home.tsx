@@ -2,9 +2,12 @@
 
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import dynamic from 'next/dynamic';
 import { PlayList, DeezerResp } from "../types/types";
-import Musics from "./Musics";
 
+const Musics = dynamic(() => import('./Musics'), {
+    ssr: false,
+  });
 
 const Home = ({ songPlay, search }:{ songPlay: (song: PlayList) => void; search: string }) => {
     const [apiSongs, setApiSongs] = useState<DeezerResp[]>([]);

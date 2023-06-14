@@ -4,9 +4,12 @@ import Link from "next/link";
 import Image from "next/image";
 import yamato from '/public/images/yamato.jpg';
 import React, { useState, useEffect } from "react";
-import About from "./About";
+import dynamic from 'next/dynamic';
 import {MdModeNight, MdWbSunny } from "react-icons/md"
 
+const About = dynamic(() => import('./About'), {
+  ssr: false,
+});
 const Navbar = ({songSearch}: { songSearch: (search: string) => void }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [isOpen, setIsOpen] = useState(false);
