@@ -36,7 +36,7 @@ const Home = ({ songPlay, search }:{ songPlay: (song: PlayList) => void; search:
                     console.error(error);
                 });
         }
-        }, [search, apiKey]);
+    }, [search, apiKey]);
 
     return (
         <>

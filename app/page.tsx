@@ -1,12 +1,18 @@
 "use client"
 
 import React, { useState } from "react";
-import Navbar from './components/Navbar';
-import Player from './components/Player';
+import dynamic from 'next/dynamic';
 import { PlayList } from "./types/types";
-import Home from "./components/Home";
 
-
+const Navbar = dynamic(() => import('./components/Navbar'), {
+  ssr: false,
+});
+const Player = dynamic(() => import('./components/Player'), {
+  ssr: false,
+});
+const Home = dynamic(() => import('./components/Home'), {
+  ssr: false,
+});
 export default function App(): JSX.Element {
   const [play, setPlay] = useState<PlayList[]>([]);
   const [search, setSearch] = useState("");
