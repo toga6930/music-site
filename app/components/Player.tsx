@@ -1,4 +1,3 @@
-"use client";
 
 import { PlayList } from "../types/types";
 import  AudioPlayer from "react-modern-audio-player";
