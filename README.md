@@ -23,7 +23,7 @@ If you liked it, check my github and youtube!
 
 ## Links
 
-- Live Site URL: [LDB-Music](https://woozer.vercel.app/)
+- Live Site URL: [LDB-Music](https://music-site-alpha.vercel.app/)
 
 
 ## Authors Info
