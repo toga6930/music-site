@@ -19,14 +19,16 @@ const Musics = ({ id, title, artist, preview, img_medium, songPlay }: SongInt) =
     const handleFav = (e: React.MouseEvent<SVGSVGElement>) => {
       e.stopPropagation(); 
       setIsFav((prevIsFav) => !prevIsFav);
-      if (!isFav) {
-        const likedSongs =
-          JSON.parse(localStorage.getItem("likedSongs") || "[]") || [];
-        const updateLikedSongs = [
-          ...likedSongs,
-          { id, title, artist, img_medium, preview },
-        ];
-        localStorage.setItem("likedSongs", JSON.stringify(updateLikedSongs));
+      if (typeof localStorage !== "undefined") {
+        if (!isFav) {
+          const likedSongs =
+            JSON.parse(localStorage.getItem("likedSongs") || "[]") || [];
+          const updateLikedSongs = [
+            ...likedSongs,
+            { id, title, artist, img_medium, preview },
+          ];
+          localStorage.setItem("likedSongs", JSON.stringify(updateLikedSongs));
+        }
       }
     };
 
