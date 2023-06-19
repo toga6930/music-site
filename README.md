@@ -28,4 +28,5 @@ If you liked it, check my github and youtube!
 
 ## Authors Info
 
+- Notion URL: [Resume](https://lilhoon.notion.site/lilhoon/Resume-8429cdefc2324c509fe6731a6720f084)
 
